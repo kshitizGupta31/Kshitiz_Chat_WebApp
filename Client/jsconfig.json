@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+      // ...
+      "baseUrl": ".",
+      "paths": {
+        "@/*": [
+          "./src/*"
+        ]
+      }
+      // ...
+    }
+  }
+
+//   const path = require('path');
+
+// module.exports = {
+//   target: 'node', // Ensures that built-ins like fs, path, etc., are available
+//   entry: './src/server/index.js', // Adjust the entry point as necessary
+//   output: {
+//     path: path.resolve(__dirname, 'dist'),
+//     filename: 'server.bundle.js'
+//   },
+//   externals: [require('webpack-node-externals')()], // Exclude node_modules from the bundle
+//   module: {
+//     rules: [
+//       {
+//         test: /\.js$/,
+//         exclude: /node_modules/,
+//         use: 'babel-loader'
+//       }
+//     ]
+//   }
+// };
