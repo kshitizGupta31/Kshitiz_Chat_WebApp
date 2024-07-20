@@ -1,4 +1,4 @@
-import { useAppStore } from "@/store";
+import { useAppStore } from "@/store/index.js";
 import { HOST } from "@/utils/constants";
 import { createContext, useContext, useEffect, useRef } from "react";
 import { io } from "socket.io-client";
@@ -23,17 +23,17 @@ export const SocketProvider = ({ children }) => {
       socket.current.on("connect", () => {
         console.log("Connected to socket server");
       });
-// const handleRecieveMessage=(message)=>{
-// const {selectedChatData,selectedChatType}=useAppStore.getState();
-// if(selectedChatType!==undefined &&
-//    (selectedChatData._id===message.sender._id||
-//     selectedChatData._id===message.recipient._id)){
-//      console.log("message rcv",message);
-//       addMessage(message);
+const handleRecieveMessage=(message)=>{
+const {selectedChatData,selectedChatType,addMessage}=useAppStore.getState();
+if(selectedChatType!==undefined &&
+   (selectedChatData._id===message.sender._id||
+    selectedChatData._id===message.recipient._id)){
+     console.log("message rcv",message);
+      addMessage(message);
     
-//     }
-// };
-// socket.current.on("recieveMessage",handleRecieveMessage)
+    }
+};
+socket.current.on("recieveMessage",handleRecieveMessage)
       return () => {
         socket.current.disconnect();
       };
