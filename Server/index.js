@@ -99,10 +99,12 @@ import messagesRoutes from "./routes/MessagesRoutes.js";
 
 import channelRoutes from "./routes/ChannelRoutes.js";
 
+
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3002;
+
 const databaseURL = process.env.DATABASE_URL;
 // app.use((req, res, next) => {
 //   res.header('Access-Control-Allow-Origin', '*'); // Allow all origins
@@ -134,6 +136,7 @@ app.use("/api/channel",channelRoutes);
 
 const server = app.listen(port, () => {
   console.log(`Server is running at https://localhost:${port}`);
+  // console.log(process.env.DATABASE_URL);
 });
 setupSocket(server);
 
