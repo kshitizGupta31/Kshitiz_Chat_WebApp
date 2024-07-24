@@ -3,40 +3,51 @@ import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 import { RiCloseFill } from "react-icons/ri";
 import { getColor } from "@/lib/utils";
 import { HOST } from "@/utils/constants";
+
 export default function ChatHeader() {
   const { closeChat, selectedChatData, selectedChatType } = useAppStore();
-  console.log(selectedChatData.firstName)
+//  { console.log(selectedChatData.firstName)||console.log(Channel.firstName)};
+console.log(selectedChatData._id.firstName)
   return (
     <div className="h-[10vh] border-b-2 border-[#2f303b] flex items-center justify-between px-20">
       <div className="flex gap-5 items-center w-full justify-between">
         <div className="flex gap-3 items-center justify-center ">
           <div className="w-12 h-12 relative">
-            <Avatar className="h-12 w-12  rounded-full overflow-hidden ">
-              {selectedChatData.image ? (
-                <AvatarImage
-                  src={`${HOST}/${selectedChatData.image}`}
-                  alt="Profile"
-                  className="object-cover h-full bg-transparent rounded-full"
-                />
-              ) : (
-                <div
-                  className={`uppercase h-12 w-12  text-lg border-[1px] flex items-center justify-center rounded-full ${getColor(
-                    selectedChatData.color
-                  )}`}
-                >
-                  {selectedChatData.firstName
-                    ? selectedChatData.firstName.split("").shift()
-                    : selectedChatData.email.split("").shift()}
-                </div>
-              )}
-            </Avatar>
+            {selectedChatType === "contact" ? (
+              <Avatar className="h-12 w-12  rounded-full overflow-hidden ">
+                {selectedChatData.image ? (
+                  <AvatarImage
+                    src={`${HOST}/${selectedChatData.image}`}
+                    alt="Profile"
+                    className="object-cover h-full bg-transparent rounded-full"
+                  />
+                ) : (
+                  <div
+                    className={`uppercase h-12 w-12  text-lg border-[1px] flex items-center justify-center rounded-full ${getColor(
+                      selectedChatData.color
+                    )}`}
+                  >
+                    {selectedChatData.firstName
+                      ? selectedChatData.firstName.split("").shift()
+                      : selectedChatData.email.split("").shift()}
+                  </div>
+                )}
+              </Avatar>
+            ) : (
+              <div className="bg-[#ffffff22] h-10 w-10 flex items-center justify-center rounded-full">
+                #
+              </div>
+            )}
           </div>
           <div>
-            {selectedChatType === "contact" && (
-                       selectedChatData.firstName===undefined?selectedChatData.email:`${selectedChatData.firstName} ${selectedChatData.lastName}`
+            {selectedChatType==="channel"&&selectedChatData.name}
+            {selectedChatType === "contact" &&
+              (selectedChatData.firstName === undefined
+                ? selectedChatData.email
+                : `${selectedChatData.firstName} ${selectedChatData.lastName}`)
               // if(selectedChatData===undefined){selectedChatData.email}
               // else{ `${selectedChatData.firstName} ${selectedChatData.lastName}`}
-)}
+            }
           </div>
         </div>
         <div className="flex items-center justify-center gap-5">
