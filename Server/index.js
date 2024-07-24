@@ -104,7 +104,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3002;
 const databaseURL = process.env.DATABASE_URL;
-app.use(cors());
+
 app.use(
   cors({
     origin: process.env.ORIGIN,
