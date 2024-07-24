@@ -104,19 +104,19 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3002;
 const databaseURL = process.env.DATABASE_URL;
-
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*'); // Allow all origins
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE,PATCH');
+  res.header('Access-Control-Allow-Headers', 'Origin, Content-Type,');
+  next();
+});
 app.use(
   cors({
     origin: process.env.ORIGIN,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
-    allowedHeaders: [
-      "Origin",
-      "X-Requested-With",
-      "Content-Type",
-      "Accept",
-      "Authorization"
-    ],
+
+    
   })
 );
 // app.use((req, res, next) => {
