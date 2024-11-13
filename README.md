@@ -47,6 +47,25 @@ Feel free to fork this repository and submit pull requests. For major changes, p
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 You can place this content in a file named `README.md` in the root directory of your project. Feel free to customize it further to suit your needs!
- 
+
+## Output
+![Screenshot 2024-07-27 100952](https://github.com/user-attachments/assets/f715b74d-1cf0-4cf9-b749-32a842fd5e02)
+![Screenshot 2024-07-27 101045](https://github.com/user-attachments/assets/89337bcc-d70a-45ad-aa30-1a278c733e78)
+![Screenshot 2024-07-27 101138](https://github.com/user-attachments/assets/025a3cdc-7d65-4231-8cd6-3973ad93c984)
+![Screenshot 2024-07-27 101232](https://github.com/user-attachments/assets/06bf7d1e-321f-4959-a030-9b280c75160b)
+![Screenshot 2024-07-27 101259](https://github.com/user-attachments/assets/e8ca19fa-dba1-486b-b8e9-5c5252f65726)
+![Screenshot 2024-07-27 101358](https://github.com/user-attachments/assets/ea3b1ca9-dd97-44f2-b18f-961877d48225)
+![Screenshot 2024-07-27 101501](https://github.com/user-attachments/assets/e3c03db6-7167-4b21-83c9-ce4584f87768)
+![Screenshot 2024-07-27 101646 - Copy](https://github.com/user-attachments/assets/007088da-f7c4-4cd6-a338-b3caea5f8c4e)
+![Screenshot 2024-07-27 101824 - Copy](https://github.com/user-attachments/assets/9170f132-da2f-40b0-a1fe-9978f701ff1f)
+
+
+
+
+
+
+
+
+
 
  
