@@ -13,6 +13,7 @@ export const searchContacts = async (request, response, next) => {
     );
     const regex = new RegExp(sanitizedSearchTerm, "i");
     const contacts = await User.find({
+      //$ne checks currently logged in user will not be shown in search box-----------
       $and: [
         { _id: { $ne: request.userId } },
         {
